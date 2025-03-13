@@ -81,7 +81,7 @@ const Docx = ({nav}) => {
 
     
     
-    axios.post('http://localhost:5000/docx',formData, {headers: { "Content-Type": "multipart/form-data" }, withCredentials:true})
+    axios.post('https://nodup.onrender.com/docx',formData, {headers: { "Content-Type": "multipart/form-data" }, withCredentials:true})
     .then((response)=>{
       
       if (!response.data.success){
