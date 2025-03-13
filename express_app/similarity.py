@@ -11,7 +11,8 @@ CORS(app,supports_credentials=True)
 nltk.download('wordnet')
 
 # Load an even better SBERT model for higher accuracy
-model = SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2", device="cpu")
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device="cpu")  # Smaller model
+
 
 class SuffixTreeNode:
     def __init__(self):
@@ -104,6 +105,7 @@ def getscore():
 
     return jsonify({'success':True,'score':round(similarity_score*100)})
 
+import os
+port = int(os.environ.get("PORT", 5000))  # Get the assigned port
+app.run(host="0.0.0.0", port=port, debug=True)
 
- # Use Render's PORT
-app.run(port=8080, debug=True)
