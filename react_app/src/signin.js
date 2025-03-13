@@ -28,7 +28,7 @@ const Signin = () => {
 
     const formSubmitSignin=(event)=>{
         event.preventDefault(); 
-        axios.post('http://localhost:5000/signin',login,{ withCredentials: true })
+        axios.post('https://nodup.onrender.com/signin',login,{ withCredentials: true })
         .then(response=>{ 
             if (response.data.success===true){
                 setsignInState(true)
@@ -47,7 +47,7 @@ const Signin = () => {
 
     const formSubmitSignup=(event)=>{
         event.preventDefault()
-        axios.post("http://localhost:5000/signup",signup,{ withCredentials: true })
+        axios.post("https://nodup.onrender.com/signup",signup,{ withCredentials: true })
         .then((response)=>
             {
             if (response.data.message==='blank space'){
