@@ -31,7 +31,7 @@ const Saved = ( {titledata}) => {
    
 
     const handleroute=(title)=>{
-      axios.post('http://localhost:5000/scorelog',{'title':title},{withCredentials:true})
+      axios.post('https://nodup.onrender.com/scorelog',{'title':title},{withCredentials:true})
       .then((response)=>{
         console.log(response.data.message)
         
@@ -42,7 +42,7 @@ const Saved = ( {titledata}) => {
       .catch((e)=>console.log(e))}
 
       const handledelete=(title)=>{
-        axios.post('http://localhost:5000/delete',{'title':title},{withCredentials:true})
+        axios.post('https://nodup.onrender.com/delete',{'title':title},{withCredentials:true})
         .then((response)=>{
           console.log(response.data.message)
           window.location.reload()
