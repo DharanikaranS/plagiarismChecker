@@ -59,7 +59,7 @@ app.use(session({
 mongodb().catch((e)=>console.log(e))
 
 async function  mongodb(){
- await mongoose.connect("mongodb+srv://plagiarismChecker:Dharani27@plagiarismchecker.vrkyg.mongodb.net/usersDb")
+ await mongoose.connect(MONGO_URI)
 }
 
 app.use(express.json())
