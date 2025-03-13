@@ -106,6 +106,6 @@ def getscore():
     return jsonify({'success':True,'score':round(similarity_score*100)})
 
 import os
-port = int(os.environ.get("PORT", 5000))  # Get the assigned port
+port = int(os.environ.get("PORT", 10000))  # Get the assigned port
 app.run(host="0.0.0.0", port=port, debug=True)
 
