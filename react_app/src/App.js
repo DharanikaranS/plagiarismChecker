@@ -17,7 +17,7 @@ const App = () => {
   let [titledata,setTitleData]=useState([])
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/getData",{withCredentials:true})
+    axios.get("https://nodup.onrender.com/getData",{withCredentials:true})
     .then((response)=>{
       if (response.data.success){
     
