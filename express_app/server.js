@@ -10,6 +10,12 @@ const session=require('express-session')
 const MongoStore=require('connect-mongo')
 const axios=require('axios')
 const mammoth = require("mammoth");
+require("dotenv").config();  // Load environment variables
+
+const MONGO_URI = process.env.MONGO_URI;
+const SESSION_SECRET = process.env.SESSION_SECRET;
+const ADOBE_CLIENT_ID = process.env.ADOBE_CLIENT_ID;
+const ADOBE_CLIENT_SECRET = process.env.ADOBE_CLIENT_SECRET;
 const {
     ServicePrincipalCredentials,
     PDFServices,
@@ -32,11 +38,11 @@ app.use(cors({
 
 
 app.use(session({
-    secret:"Dharani27#",
+    secret:SESSION_SECRET,
     resave:false,
     saveUninitialized:false,
     
-    store: MongoStore.create({mongoUrl : 'mongodb+srv://plagiarismChecker:Dharani27@plagiarismchecker.vrkyg.mongodb.net/sessionsdb'}),
+    store: MongoStore.create({mongoUrl : MONGO_URI}),
     cookie:{
         
         secure: process.env.NODE_ENV === "production",  // Set to true in production
@@ -205,8 +211,8 @@ app.post("/pdf", upload.fields([{name:'text'},{ name: "pdf1" }, { name: "pdf2" }
 
         // Adobe PDF Services Credentials
         const credentials = new ServicePrincipalCredentials({
-            clientId: "b5c5e98988354c839aa10c072a37501d",
-            clientSecret: "p8e-cvPK-qFm05V3HMhZrkc4iHOAgWzwf5iz"
+            clientId: ADOBE_CLIENT_ID,
+            clientSecret:  ADOBE_CLIENT_SECRET
         });
 
         const pdfServices = new PDFServices({ credentials,timeout: 30000 });
