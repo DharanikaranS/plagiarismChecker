@@ -11,7 +11,7 @@ CORS(app,supports_credentials=True)
 nltk.download('wordnet')
 
 # Load an even better SBERT model for higher accuracy
-model = SentenceTransformer("sentence-transformers/stsb-roberta-large")
+model = SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2", device="cpu")
 
 class SuffixTreeNode:
     def __init__(self):
