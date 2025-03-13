@@ -81,7 +81,7 @@ const Documentcontent = ({nav}) => {
 
     
     
-    axios.post('http://localhost:5000/pdf',formData, {headers: { "Content-Type": "multipart/form-data" }, withCredentials:true})
+    axios.post('https://nodup.onrender.com/pdf',formData, {headers: { "Content-Type": "multipart/form-data" }, withCredentials:true})
     .then((response)=>{
       
       if (!response.data.success){
