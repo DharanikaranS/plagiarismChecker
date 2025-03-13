@@ -105,6 +105,5 @@ def getscore():
     return jsonify({'success':True,'score':round(similarity_score*100)})
 
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8080))  # Use Render's PORT
-    app.run(host='0.0.0.0', port=port, debug=True)
+ # Use Render's PORT
+app.run(port=8080, debug=True)
