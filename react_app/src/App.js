@@ -5,7 +5,7 @@ import './App.css'
 import Textcontent from './textcontent.js'
 import { useState } from 'react'
 import Documentcontent from './Documentcontent.js'
-
+import Chatbot from './Chatbot.js'
 import Docx from './docx.js'
 import axios from 'axios'
 
@@ -17,7 +17,7 @@ const App = () => {
   let [titledata,setTitleData]=useState([])
 
   useEffect(()=>{
-    axios.get("https://nodup.onrender.com/getData",{withCredentials:true})
+    axios.get("http://localhost:5000/getData",{withCredentials:true})
     .then((response)=>{
       if (response.data.success){
     
@@ -41,9 +41,11 @@ const App = () => {
     <Textcontent nav={nav}  />
     <Documentcontent nav={nav}/>
     <Docx nav={nav}/>
+    <Chatbot></Chatbot>
     </section>
     
   )
 }
 
 export default App
+
