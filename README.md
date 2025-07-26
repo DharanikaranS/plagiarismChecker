@@ -69,9 +69,9 @@ python similarity.py   # run the semantic similarity backend (Flask)
 ## 👤 Author
 
 **Dharanikaran S**  
-🎓 B.Tech Information Technology 
+🎓 B.Tech Information Technology            
 🏫 SSN College of Engineering, Tamil Nadu  
-📧 dharanikaran@email.com  
+📧 dharanikarans27@email.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/dharanikaran-s-229b55303/)  
 🔗 [GitHub](https://github.com/DharanikaranS)
 
